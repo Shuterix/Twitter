@@ -5,7 +5,7 @@
 
 <body>
 	{{-- tu includujem nav bar --}}
-	@include('_template.nav')
+	@include('inc.nav')
 
     <div class="container py-4">
 		{{-- tu extendujeme content --}}

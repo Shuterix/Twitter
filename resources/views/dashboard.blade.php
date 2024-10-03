@@ -52,8 +52,8 @@
 			</div>
 		</div>
 		<hr>
-		@foreach ($users as $user)
-			@include('_template.users')
+		@foreach ($posts as $post)
+			@include('inc.post')
 		@endforeach
 	</div>
 	<div class="col-3">
