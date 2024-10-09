@@ -1,8 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
 use App\Models\Post;
 
 class DashboardController extends Controller
@@ -24,19 +22,11 @@ class DashboardController extends Controller
             ]
         ];
 
-		$post = new Post(
-			[
-				'content' => 'Lorem ipsum',
-				'likes' => 100
-			]
-		);
-		// $post->save();
-
         return view(
             "dashboard",
             [
                 "users" => $users,
-				"posts" => Post::orderBy('likes', 'DESC')->get(),
+				"posts" => Post::orderBy('created_at', 'DESC')->get(),
             ]
         );
     }

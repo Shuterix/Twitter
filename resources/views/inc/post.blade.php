@@ -4,6 +4,11 @@
 			<div class="d-flex align-items-center justify-content-between">
 				<div class="d-flex align-items-center">
 					<img style="width:50px" class="me-2 avatar-sm rounded-circle" src="https://api.dicebear.com/6.x/fun-emoji/svg?seed=Mario" alt="Mario Avatar">
+					<form action="{{ route('post.destroy', $post->id) }}" method="POST">
+						@csrf
+						@method('DELETE')
+						<button class="p-2 text-red-500 rounded-md border w-8 h-8 items-center justify-center flex">X</button>
+					</form>
 					<div>
 						<h5 class="card-title mb-0">
 							<a href="#">
