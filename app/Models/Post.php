@@ -13,4 +13,10 @@ class Post extends Model
 		'content',
 		 'likes'
 	];
+
+	public function comments()
+	{
+		return $this->hasMany(Comment::class);
+	}
+
 }
