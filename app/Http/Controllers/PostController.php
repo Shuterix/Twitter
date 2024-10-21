@@ -37,7 +37,6 @@ class PostController extends Controller
 
 	public function edit(Post $post)
 	{
-		// Return the view for editing the post
 		return view('posts.edit', ['post' => $post]);
 	}
 
@@ -53,5 +52,4 @@ class PostController extends Controller
 
 		return redirect()->route('dashboard')->with('success', 'Post has been updated successfully');
 	}
-
 }
