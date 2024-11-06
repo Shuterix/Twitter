@@ -17,6 +17,7 @@ class PostController extends Controller
 			[
 				'content' => request('content'),
 				'likes' => 0,
+				'user_id' => auth()->id(),
 			]
 		);
 		return redirect()->route('dashboard')->with('success', 'Post bol vytvoreny');	

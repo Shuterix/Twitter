@@ -10,14 +10,12 @@ class CommentController extends Controller
 {
     public function store(Request $request, Post $post)
     {
-        $request->validate([
-            'content' => 'required|min:5|max:255',
-        ]);
+        $comment = new Comment();
+		$comment->post_id = $post->id;
+		$comment->user_id = auth()->id();
+		$comment->content = $request->get('content');
+		$comment->save();	
 
-        $post->comments()->create([
-            'content' => $request->input('content'),
-        ]);
-
-        return redirect()->route('dashboard')->with('success', 'Comment added successfully');
+        return redirect()->route('dashboard', $post->id)->with('success', 'Comment added successfully');
     }
 }
